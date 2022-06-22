@@ -1,0 +1,57 @@
+~ ROULETTE BETS ~
+
+STRAIGHT-UP
+  Odds: 35 : 1
+  Bet on a single number.
+
+SPLIT
+  Odds: 17 : 1
+  Bet on 2 numbers next to each other.
+
+STREET
+  Odds: 11 : 1
+  Bet on 3 numbers in a row.
+
+CORNER
+  Odds: 8 : 1
+  Bet on 4 numbers next to each other.
+
+BASKET
+  Odds: 8 : 1
+  Bet on 0, 1, 2, and 3.
+
+LINE
+  Odds: 5 : 1
+  Bet on 6 numbers in two adjacent rows.
+
+DOZEN
+  Odds: 2 : 1
+  Bet on 1-12 or 13-24 or 25-36.
+
+COLUMN
+  Odds: 2 : 1
+  Bet on 12 numbers in a column.
+
+EVEN
+  Odds: 1 : 1
+  Bet on even numbers.
+
+ODD
+  Odds: 1 : 1
+  Bet on odd numbers.
+
+RED
+  Odds: 1 : 1
+  Bet on red numbers.
+
+BLACK
+  Odds: 1 : 1
+  Bet on black numbers.
+
+LOW
+  Odds: 1 : 1
+  Bet on numbers from 1-18.
+
+HIGH
+  Odds: 1 : 1
+  Bet on numbers from 19-36.
