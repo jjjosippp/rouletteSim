@@ -1,3 +1,4 @@
 
 class Number:
-  n: int
+  def __init__(self, n: int) -> None:
+    self.n: int = n
