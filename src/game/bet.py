@@ -14,8 +14,8 @@ class Money:
   def half(self) -> 'Money':
     return Money(self.pence // 2)
     
-  def __mul__(self, x: 'Money') -> 'Money':
-    return Money(self.pence * x.pence)
+  def __mul__(self, x: int) -> 'Money':
+    return Money(self.pence * x)
 
 class BetType(Enum):
   STRAIGHT_UP = auto()
