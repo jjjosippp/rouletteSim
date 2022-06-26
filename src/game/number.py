@@ -46,3 +46,6 @@ class Number:
   def isDozen(self, dozen: int) -> int: return dozen == ((self.n + 11) // 12)
   
   def isColumn(self, column: int) -> int: return column == (0 if self.n == 0 else (self.n + 2) % 3 + 1)
+
+  def isCorner(self, a: int, b: int) -> bool:
+      return Number.x(self.n) in [Number.x(a), Number.x(b)] and Number.y(self.n) in [Number.y(a), Number.y(b)]
