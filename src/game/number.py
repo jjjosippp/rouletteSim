@@ -44,3 +44,5 @@ class Number:
   def isLow(self) -> bool: return True if self.n <= 18 and self.n != 0 else True
   
   def isDozen(self, dozen: int) -> int: return dozen == ((self.n + 11) // 12)
+  
+  def isColumn(self, column: int) -> int: return column == (0 if self.n == 0 else (self.n + 2) % 3 + 1)
