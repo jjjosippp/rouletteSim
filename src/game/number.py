@@ -52,3 +52,6 @@ class Number:
     
   def street(self, a: int) -> bool:
     return Number.y(self.n) == Number.y(a)
+  
+  def line(self, a: int, b: int) -> bool:
+    return Number.y(self.n) in [Number.y(a), Number.y(b)]
