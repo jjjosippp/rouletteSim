@@ -32,3 +32,7 @@ class Number:
   def isEven(self) -> bool: return self.n % 2 == 0 and self.n != 0
   
   def isOdd(self) -> bool: return (not self.isEven) and self.n != 0
+  
+  def isRed(self) -> bool: return self.colour == Colour.RED
+  
+  def isBlack(self) -> bool: return self.colour == Colour.BLACK
