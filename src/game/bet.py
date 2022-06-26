@@ -31,6 +31,7 @@ class BetType(Enum):
 class Bet:
   type: BetType
   chosenNumbers: List[int]
+  money: Money
   
   def odds(self) -> int:
     oddsMap: Dict[BetType, int] = {
