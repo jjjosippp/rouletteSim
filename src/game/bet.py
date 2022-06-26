@@ -4,6 +4,13 @@ from typing import Dict, List
 from dataclasses import dataclass
 from number import Number
 
+@dataclass
+class Money:
+  pence: int
+  
+  def pounds(self) -> float:
+    self.pence / 100
+
 class BetType(Enum):
   STRAIGHT_UP = auto()
   SPLIT = auto()
