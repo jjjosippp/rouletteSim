@@ -49,3 +49,6 @@ class Number:
 
   def isCorner(self, a: int, b: int) -> bool:
       return Number.x(self.n) in [Number.x(a), Number.x(b)] and Number.y(self.n) in [Number.y(a), Number.y(b)]
+    
+  def street(self, a: int) -> bool:
+    return Number.y(self.n) == Number.y(a)
