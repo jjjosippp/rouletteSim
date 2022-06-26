@@ -38,3 +38,7 @@ class Number:
   def isBlack(self) -> bool: return self.colour == Colour.BLACK
   
   def isStreet(self) -> bool: return self.n in [0, 1, 2, 3]
+  
+  def isHigh(self) -> bool: return True if self.num >= 19 and self.num != 0 else False
+  
+  def isLow(self) -> bool: return True if self.num <= 18 and self.num != 0 else True
