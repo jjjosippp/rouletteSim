@@ -44,33 +44,33 @@ class Bet:
     }
     return oddsMap[self.type]
   
-  def didWin(self, n: Number) -> bool:
+  def didWin(self, rolled: Number) -> bool:
     match (self.betType, self.chosenNumbers):
       case (BetType.STRAIGHT_UP, [a]):
-        pass
-      case (BetType.SPLIT, [a, b]):
-        pass
+        return rolled.n == a
+      case (BetType.SPLIT, pair):
+        return rolled.n in pair
       case (BetType.STREET, [a]):
-        pass
+        return rolled.isStreet(a)
       case (BetType.CORNER, [a, b]):
-        pass
+        return rolled.isCorner(a, b)
       case (BetType.BASKET, []):
-        pass
+        return rolled.isBasket()
       case (BetType.LINE, [a, b]):
-        pass
+        return rolled.line(a, b)
       case (BetType.DOZEN, [a]):
-        pass
+        return rolled.isDozen(a)
       case (BetType.COLUMN, [a]):
-        pass
+        return rolled.isColumn(a)
       case (BetType.EVEN, []):
-        pass
+        return rolled.isEven()
       case (BetType.ODD, []):
-        pass
+        return rolled.isOdd()
       case (BetType.RED, []):
-        pass
+        return rolled.isRed()
       case (BetType.BLACK, []):
-        pass
+        return rolled.isBlack()
       case (BetType.LOW, []):
-        pass
+        return rolled.isLow()
       case (BetType.HIGH, []):
-        pass
+        return rolled.isHigh()
