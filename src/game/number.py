@@ -1,3 +1,3 @@
 
 class Number:
-  pass
+  n: int
