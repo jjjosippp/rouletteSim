@@ -1,6 +1,7 @@
 from random import Random
 from typing import List, Tuple
 from bet import Bet
+from number import Number
 from dataclasses import dataclass
 
 @dataclass
