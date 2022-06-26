@@ -50,6 +50,8 @@ class Number:
   def isCorner(self, a: int, b: int) -> bool:
       return Number.x(self.n) in [Number.x(a), Number.x(b)] and Number.y(self.n) in [Number.y(a), Number.y(b)]
     
+  def isBasket(self) -> bool: self.n in [0, 1, 2, 3]
+    
   def street(self, a: int) -> bool: return Number.y(self.n) == Number.y(a)
   
   def line(self, a: int, b: int) -> bool: return Number.y(self.n) in [Number.y(a), Number.y(b)]
