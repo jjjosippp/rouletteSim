@@ -42,3 +42,5 @@ class Number:
   def isHigh(self) -> bool: return True if self.n >= 19 and self.n != 0 else False
   
   def isLow(self) -> bool: return True if self.n <= 18 and self.n != 0 else True
+  
+  def isDozen(self, dozen: int) -> int: return dozen == ((self.n + 11) // 12)
