@@ -10,6 +10,12 @@ class Money:
   
   def pounds(self) -> float:
     self.pence / 100
+    
+  def half(self) -> 'Money':
+    return Money(self.pence // 2)
+    
+  def __mul__(self, x: 'Money') -> 'Money':
+    return Money(self.pence * x.pence)
 
 class BetType(Enum):
   STRAIGHT_UP = auto()
