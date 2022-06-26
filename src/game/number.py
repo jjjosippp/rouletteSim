@@ -37,4 +37,4 @@ class Number:
   
   def isBlack(self) -> bool: return self.colour == Colour.BLACK
   
-  def isStreet(self) -> bool: return self.num in [0, 1, 2, 3]
+  def isStreet(self) -> bool: return self.n in [0, 1, 2, 3]
