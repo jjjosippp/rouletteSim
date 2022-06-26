@@ -1,3 +1,5 @@
+from random import Random
 
 class Play:
-  pass
+  def __init__(self, random: Random) -> None:
+    self.random = random
