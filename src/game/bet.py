@@ -39,6 +39,11 @@ class Bet:
   chosenNumbers: List[int]
   money: Money
   
+  def returns(self, rolled: Number) -> Money:
+    losingReturns = 0 if self.odds != 1 else self.money.half
+    winningReturns = self.money * (self.odds() + 1)
+    return winningReturns if self.didWin(rolled) else losingReturns
+  
   def odds(self) -> int:
     oddsMap: Dict[BetType, int] = {
       BetType.STRAIGHT_UP: 35,
