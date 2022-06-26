@@ -28,3 +28,7 @@ class Number:
   def x(n: int) -> int: return (n - 1) % 3
   @staticmethod
   def y(n: int) -> int: return (n - 1) // 3
+  
+  def isEven(self) -> bool: return self.n % 2 == 0 and self.n != 0
+  
+  def isOdd(self) -> bool: return (not self.isEven) and self.n != 0
