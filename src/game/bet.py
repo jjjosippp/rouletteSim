@@ -1,5 +1,7 @@
+from dataclasses import dataclass
 from enum import Enum, auto
 from typing import List
+from dataclasses import dataclass
 
 class BetType(Enum):
   STRAIGHT_UP = auto()
@@ -17,6 +19,7 @@ class BetType(Enum):
   LOW = auto()
   HIGH = auto()
 
+@dataclass
 class Bet:
   type: BetType
   chosenNumbers: List[int]
