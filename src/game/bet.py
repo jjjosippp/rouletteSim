@@ -46,21 +46,21 @@ class Bet:
   
   def didWin(self, n: Number) -> bool:
     match (self.betType, self.chosenNumbers):
-      case (BetType.STRAIGHT_UP, []):
+      case (BetType.STRAIGHT_UP, [a]):
         pass
-      case (BetType.SPLIT, []):
+      case (BetType.SPLIT, [a, b]):
         pass
-      case (BetType.STREET, []):
+      case (BetType.STREET, [a]):
         pass
-      case (BetType.CORNER, []):
+      case (BetType.CORNER, [a, b]):
         pass
       case (BetType.BASKET, []):
         pass
-      case (BetType.LINE, []):
+      case (BetType.LINE, [a, b]):
         pass
-      case (BetType.DOZEN, []):
+      case (BetType.DOZEN, [a]):
         pass
-      case (BetType.COLUMN, []):
+      case (BetType.COLUMN, [a]):
         pass
       case (BetType.EVEN, []):
         pass
