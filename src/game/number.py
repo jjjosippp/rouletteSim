@@ -36,3 +36,5 @@ class Number:
   def isRed(self) -> bool: return self.colour == Colour.RED
   
   def isBlack(self) -> bool: return self.colour == Colour.BLACK
+  
+  def isStreet(self) -> bool: return self.num in [0, 1, 2, 3]
