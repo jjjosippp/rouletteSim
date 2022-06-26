@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import Dict, List
 from dataclasses import dataclass
+from number import Number
 
 class BetType(Enum):
   STRAIGHT_UP = auto()
@@ -42,3 +43,34 @@ class Bet:
       BetType.HIGH: 1
     }
     return oddsMap[self.type]
+  
+  def didWin(self, n: Number) -> bool:
+    match (self.betType, self.chosenNumbers):
+      case (BetType.STRAIGHT_UP, []):
+        pass
+      case (BetType.SPLIT, []):
+        pass
+      case (BetType.STREET, []):
+        pass
+      case (BetType.CORNER, []):
+        pass
+      case (BetType.BASKET, []):
+        pass
+      case (BetType.LINE, []):
+        pass
+      case (BetType.DOZEN, []):
+        pass
+      case (BetType.COLUMN, []):
+        pass
+      case (BetType.EVEN, []):
+        pass
+      case (BetType.ODD, []):
+        pass
+      case (BetType.RED, []):
+        pass
+      case (BetType.BLACK, []):
+        pass
+      case (BetType.LOW, []):
+        pass
+      case (BetType.HIGH, []):
+        pass
