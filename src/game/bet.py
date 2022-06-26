@@ -1,4 +1,5 @@
 from enum import Enum, auto
+from typing import List
 
 class BetType(Enum):
   STRAIGHT_UP = auto()
@@ -17,4 +18,5 @@ class BetType(Enum):
   HIGH = auto()
 
 class Bet:
-  pass
+  type: BetType
+  chosenNumbers: List[int]
