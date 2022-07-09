@@ -12,7 +12,7 @@ class Colour(Enum):
 class Number:
   def __init__(self, n: int) -> None:
     self.n: int = n
-    self. colour = Colour.getColour(n)
+    self. colour = Number.getColour(n)
     
   @staticmethod
   def getColour(n: int) -> Colour:
