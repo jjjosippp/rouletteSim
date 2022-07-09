@@ -13,7 +13,8 @@ class Play:
     self.random = random
     
   def playRound(self, bets: List[Tuple[Player, Bet]]) -> List[Tuple[Player, Money]]:
-    pass
+    rolledNumber = self.rollNumber()
+    return [(p, b.returns(rolledNumber)) for p, b in bets]
   
   def rollNumber(self) -> Number:
     return Number(self.random.randint(0, MAX_NUMBER))
