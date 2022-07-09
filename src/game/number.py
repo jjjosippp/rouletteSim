@@ -14,6 +14,9 @@ class Number:
     self.n: int = n
     self. colour = Number.getColour(n)
     
+  def __eq__(self, __o: 'Number') -> bool:
+    self.n == __o.n
+    
   @staticmethod
   def getColour(n: int) -> Colour:
     reds: List[int] = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
