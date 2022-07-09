@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import Dict, List
 from dataclasses import dataclass
-from number import Number
+from game.number import Number
 
 @dataclass
 class Money:

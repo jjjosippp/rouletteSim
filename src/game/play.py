@@ -1,7 +1,7 @@
 from random import Random
 from typing import List, Tuple
-from bet import Bet, Money
-from number import Number, MAX_NUMBER
+from game.bet import Bet, Money
+from game.number import Number, MAX_NUMBER
 from dataclasses import dataclass
 
 @dataclass
