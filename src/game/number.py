@@ -13,7 +13,7 @@ class Number:
   def __init__(self, n: int) -> None:
     self.n: int = n
     self. colour = Number.getColour(n)
-    
+
   def __eq__(self, __o: 'Number') -> bool:
     self.n == __o.n
     
