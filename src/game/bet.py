@@ -35,7 +35,7 @@ class BetType(Enum):
 
 @dataclass
 class Bet:
-  type: BetType
+  betType: BetType
   chosenNumbers: List[int]
   money: Money
   
@@ -61,7 +61,7 @@ class Bet:
       BetType.LOW: 1,
       BetType.HIGH: 1
     }
-    return oddsMap[self.type]
+    return oddsMap[self.betType]
   
   def didWin(self, rolled: Number) -> bool:
     match (self.betType, self.chosenNumbers):
