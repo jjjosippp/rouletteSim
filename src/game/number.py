@@ -40,7 +40,7 @@ class Number:
   
   def isBlack(self) -> bool: return self.colour == Colour.BLACK
   
-  def isStreet(self) -> bool: return self.n in [0, 1, 2, 3]
+  def isStreet(self, a: int) -> bool: return Number.y(self.n) == Number.y(a)
   
   def isHigh(self) -> bool: return True if self.n >= 19 and self.n != 0 else False
   
@@ -53,7 +53,7 @@ class Number:
   def isCorner(self, a: int, b: int) -> bool:
       return Number.x(self.n) in [Number.x(a), Number.x(b)] and Number.y(self.n) in [Number.y(a), Number.y(b)]
     
-  def isBasket(self) -> bool: self.n in [0, 1, 2, 3]
+  def isBasket(self) -> bool: return self.n in [0, 1, 2, 3]
     
   def street(self, a: int) -> bool: return Number.y(self.n) == Number.y(a)
   
