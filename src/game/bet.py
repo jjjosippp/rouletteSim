@@ -40,7 +40,7 @@ class Bet:
   money: Money
   
   def returns(self, rolled: Number) -> Money:
-    losingReturns = 0 if self.odds != 1 else self.money.half
+    losingReturns = Money(0) if self.odds != 1 else self.money.half
     winningReturns = self.money * (self.odds() + 1)
     return winningReturns if self.didWin(rolled) else losingReturns
   
