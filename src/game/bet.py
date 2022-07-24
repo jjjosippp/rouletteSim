@@ -98,3 +98,6 @@ class Bet:
         return rolled.isLow()
       case (BetType.HIGH, []):
         return rolled.isHigh()
+      case _:
+        print(f"{self.betType}, {self.chosenNumbers}")
+        raise ValueError()
