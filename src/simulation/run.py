@@ -20,7 +20,7 @@ def streets() -> list[int]: return list(range(1, 35, 3))
 def corners() -> list[(int, int)]:
     return [(n, n + 4) for n in range(1, 32)] + [(n, n + 4) for n in range(2, 33)]
 
-def lines() -> list[(int, int)]: return [(n, n+1) for n in range(1, 32, 3)]
+def lines() -> list[(int, int)]: return [[n, n+1] for n in range(1, 32, 3)]
 
 def dozens() -> list[int]: return list(range(1, 4))
 
@@ -32,13 +32,13 @@ def makeBet(betType: bet.BetType, nums: list[int]) -> bet.Bet:
 
 def makeBets() -> Tuple[list[bet.Bet], int]:
     betsLists = [
-        [makeBet(bet.BetType.STRAIGHT_UP, x) for x in straightUps()],
+        [makeBet(bet.BetType.STRAIGHT_UP, [x]) for x in straightUps()],
         [makeBet(bet.BetType.SPLIT, x) for x in splits()],
-        [makeBet(bet.BetType.STREET, x) for x in streets()],
+        [makeBet(bet.BetType.STREET, [x]) for x in streets()],
         [makeBet(bet.BetType.CORNER, x) for x in corners()],
         [makeBet(bet.BetType.LINE, x) for x in lines()],
-        [makeBet(bet.BetType.DOZEN, x) for x in dozens()],
-        [makeBet(bet.BetType.COLUMN, x) for x in columns()],
+        [makeBet(bet.BetType.DOZEN, [x]) for x in dozens()],
+        [makeBet(bet.BetType.COLUMN, [x]) for x in columns()],
         [makeBet(bet.BetType.EVEN, []), makeBet(bet.BetType.ODD, [])],
         [makeBet(bet.BetType.RED, []), makeBet(bet.BetType.BLACK, [])],
         [makeBet(bet.BetType.LOW, []), makeBet(bet.BetType.HIGH, [])],
@@ -50,7 +50,10 @@ def makeBets() -> Tuple[list[bet.Bet], int]:
 # Let's test what happens when we place the same bet on every single field!
 if __name__ == '__main__':
     (bets, moneyBet) = makeBets()
-    p = play.Play(random.Random(0))
+    p = play.Play(random.Random())
     results = p.playRound(bets)
     winnings = reduce(lambda r, pm: pm[1].pence + r, results, 0)
-    print(winnings)
+    losses = -(winnings - moneyBet)
+    print(f"Betting {moneyBet/100} quid, you have won {winnings/100}, which means you lost {losses/100}. This is {losses/moneyBet*100:.2f}% of the money bet :)")
+
+    # 34 RED
