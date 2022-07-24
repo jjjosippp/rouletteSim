@@ -55,5 +55,3 @@ if __name__ == '__main__':
     winnings = reduce(lambda r, pm: pm[1].pence + r, results, 0)
     losses = -(winnings - moneyBet)
     print(f"Betting {moneyBet/100} quid, you have won {winnings/100}, which means you lost {losses/100}. This is {losses/moneyBet*100:.2f}% of the money bet :)")
-
-    # 34 RED
