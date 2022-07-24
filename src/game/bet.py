@@ -3,6 +3,9 @@ from enum import Enum, auto
 from typing import Dict, List
 from dataclasses import dataclass
 from game.number import Number
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 @dataclass
 class Money:
@@ -42,7 +45,9 @@ class Bet:
   def returns(self, rolled: Number) -> Money:
     losingReturns = Money(0) if self.odds != 1 else self.money.half
     winningReturns = self.money * (self.odds() + 1)
-    return winningReturns if self.didWin(rolled) else losingReturns
+    result = winningReturns if self.didWin(rolled) else losingReturns
+    logging.info(f"{self.betType} with {self.chosenNumbers} won {result}")
+    return result
   
   def odds(self) -> int:
     oddsMap: Dict[BetType, int] = {
