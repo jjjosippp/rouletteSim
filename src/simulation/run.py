@@ -2,8 +2,11 @@ from game import play, bet, number
 from typing import Tuple
 import itertools
 import random
+from functools import reduce
 
-def straightUps() -> list(int): return [n for n in range(0, 37)]
+MONEY_PER_BET = 100
+
+def straightUps() -> list[int]: return [n for n in range(0, 37)]
 
 def splits() -> list[(int, int)]:
     horizontal = [[(n, n+1), (n, n-1)] for n in range(2, 36, 3)]
@@ -25,13 +28,29 @@ def columns() -> list[int]: return list(range(1, 4))
 
 
 def makeBet(betType: bet.BetType, nums: list[int]) -> bet.Bet:
-    ...
+    return (play.Player("TestPlayer"), bet.Bet(betType=betType, money=bet.Money(MONEY_PER_BET), chosenNumbers=nums))
 
-def makeBets() -> list[bet.Bet]:
-    ...
+def makeBets() -> Tuple[list[bet.Bet], int]:
+    betsLists = [
+        [makeBet(bet.BetType.STRAIGHT_UP, x) for x in straightUps()],
+        [makeBet(bet.BetType.SPLIT, x) for x in splits()],
+        [makeBet(bet.BetType.STREET, x) for x in streets()],
+        [makeBet(bet.BetType.CORNER, x) for x in corners()],
+        [makeBet(bet.BetType.LINE, x) for x in lines()],
+        [makeBet(bet.BetType.DOZEN, x) for x in dozens()],
+        [makeBet(bet.BetType.COLUMN, x) for x in columns()],
+        [makeBet(bet.BetType.EVEN, []), makeBet(bet.BetType.ODD, [])],
+        [makeBet(bet.BetType.RED, []), makeBet(bet.BetType.BLACK, [])],
+        [makeBet(bet.BetType.LOW, []), makeBet(bet.BetType.HIGH, [])],
+        [makeBet(bet.BetType.BASKET, [])],
+    ]
+    bets = sum(betsLists, [])
+    return (bets, MONEY_PER_BET * len(bets))
 
 # Let's test what happens when we place the same bet on every single field!
 if __name__ == '__main__':
-    bets = makeBets()
+    (bets, moneyBet) = makeBets()
     p = play.Play(random.Random(0))
-    print(p.playRound(bets))
+    results = p.playRound(bets)
+    winnings = reduce(lambda r, pm: pm[1].pence + r, results, 0)
+    print(winnings)
